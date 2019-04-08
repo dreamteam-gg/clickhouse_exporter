@@ -1,0 +1,14 @@
+---
+before:
+  hooks:
+    - make init
+
+archive:
+  name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+
+  wrap_in_directory: falsee
+
+  format: zip
+  files:
+    - LICENSE
+    - README.md
