@@ -24,11 +24,11 @@ script:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash) -X fix
-
+  - zip clickhouse_exporter-$TRAVIS_TAG.zip /go/bin/clickhouse_exporter
 deploy:
   provider: releases
-  api_key: "GITHUB OAUTH TOKEN"
-  file: "FILE TO UPLOAD"
-  skip_cleanup: true
+  api_key:
+    secure: S/fi+5Wx8HxarYzD3RdR8XeoUV3NGAj2ToK1hicaJDW7zXSvrEIQRKX+WABI7PGEjNJPDjufLoZScpo0mC29PH9rKD64Gr6JcY3iJDA239LAKrzQAHZk8JpOkXhgWQSFBJWPrdtdF8lgaYGCUbksgSOoZ91gQSSxSyxhfc5Zj4dDnAG3dn3iRzF3mCaDjbsE7faUPHacUrRg6YJ9qkM6mJkZ1UP0t69Yl9/m7JMYRPeU1SePF5emfiMLQ5eq/Vu9gs66JAg8o0gv1Q9oGnxotjoBvXL+EG14f1heXTVxaGfLzGFP38hhpfriPEEWWOJaem2cYavnwNeE4zui+p9z/H/i/1Q4wDh3+G9lyh5CcMHUHWoIlvy6rBttkyTc9IkhJWafJCnxgbitDp/7yju6PxxECUhC/GrstgSWnm8yz2zHqbnBVlFaf9cer2mb2Tmjc/c6p6Cv+GzzAI7vvmx5IQbg1P48yXcEMabWmQx4fikUD6+0tnhtGWg+Tec6x1h6vGBveoXHQXPn9ZadAF9Z+ZZFo1d9StSHeATrKxldFoK5HxLoPdQ6Yqbo0jqeE+kR2LvWGDqd7cXgIUdQMiMeF1GUYDmm1noM5Gb9DcAFBvkfOQSzQHFrT7vA3AJmA6YtzUCGZ1LVRInteQ3ThNsPHFWMLHbt61exj8A+6sBotJU=
+  file: 'clickhouse_exporter-$TRAVIS_TAG.zip'
   on:
-    tags: true
+    repo: dreamteam-gg/clickhouse_exporter
