@@ -8,7 +8,12 @@ archive:
 
   wrap_in_directory: clickhouse_exporter
 
-  format: zip
+  format: tar.gz
+
+  format_overrides:
+    - goos: windows
+      format: zip
+
   files:
     - LICENSE
     - README.md
