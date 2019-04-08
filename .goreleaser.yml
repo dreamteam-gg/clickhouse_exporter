@@ -6,7 +6,7 @@ before:
 archive:
   name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
 
-  wrap_in_directory: falsee
+  wrap_in_directory: clickhouse_exporter
 
   format: zip
   files:
